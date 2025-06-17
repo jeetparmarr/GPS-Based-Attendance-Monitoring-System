@@ -1,0 +1,155 @@
+/* Mobile-optimized form styles */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+
+/* Form elements optimized for touch */
+input[type="text"],
+input[type="password"],
+input[type="email"],
+input[type="number"],
+input[type="tel"],
+input[type="url"],
+input[type="search"],
+textarea,
+select,
+button,
+.btn {
+    font-size: 16px !important; /* Prevents iOS zoom on focus */
+    padding: 12px !important;
+    border-radius: 8px !important;
+    margin-bottom: 15px !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+    min-height: 44px !important; /* Minimum Apple recommended touch target size */
+}
+
+/* Checkbox and radio optimized for touch */
+input[type="checkbox"],
+input[type="radio"] {
+    width: 22px !important;
+    height: 22px !important;
+    margin-right: 8px !important;
+}
+
+/* Label positioning for checkboxes and radios */
+label.checkbox-label,
+label.radio-label {
+    display: flex !important;
+    align-items: center !important;
+    margin-bottom: 12px !important;
+    user-select: none !important;
+}
+
+/* Form buttons */
+button[type="submit"],
+input[type="submit"],
+.submit-btn {
+    background-color: #0072ff !important;
+    color: white !important;
+    font-weight: 500 !important;
+    text-align: center !important;
+    border: none !important;
+    cursor: pointer !important;
+    transition: background-color 0.3s, transform 0.2s !important;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2) !important;
+    touch-action: manipulation !important;
+    -webkit-tap-highlight-color: transparent !important;
+}
+
+button[type="submit"]:hover, 
+input[type="submit"]:hover,
+.submit-btn:hover,
+button[type="submit"]:active, 
+input[type="submit"]:active,
+.submit-btn:active {
+    background-color: #0056b3 !important;
+}
+
+button[type="submit"]:active, 
+input[type="submit"]:active,
+.submit-btn:active {
+    transform: translateY(1px) !important;
+}
+
+/* Clear floats to avoid layout issues */
+.form-group::after {
+    content: "" !important;
+    display: table !important;
+    clear: both !important;
+}
+
+/* Mobile specific adjustments */
+@media (max-width: 768px) {
+    form {
+        padding: 15px !important;
+    }
+    
+    .form-group.row {
+        flex-direction: column !important;
+    }
+    
+    .form-column {
+        width: 100% !important;
+        padding: 0 !important;
+    }
+    
+    button[type="submit"],
+    input[type="submit"],
+    .submit-btn {
+        padding: 14px !important;
+    }
+    
+    .otp-input {
+        letter-spacing: 4px !important;
+        font-size: 20px !important;
+    }
+}
+
+/* Extra small devices (portrait phones) */
+@media (max-width: 576px) {
+    input[type="text"],
+    input[type="password"],
+    input[type="email"],
+    input[type="number"],
+    input[type="tel"],
+    input[type="url"],
+    input[type="search"],
+    textarea,
+    select {
+        font-size: 16px !important; /* Prevents iOS zoom */
+        padding: 12px 10px !important;
+    }
+    
+    button[type="submit"],
+    input[type="submit"],
+    .submit-btn {
+        padding: 12px !important;
+    }
+}
+
+/* Touch state styling */
+.touch-active {
+    opacity: 0.8 !important;
+    transform: scale(0.98) !important;
+}
+
+/* Fix for iOS zoom on input */
+@media screen and (-webkit-min-device-pixel-ratio:0) { 
+    select,
+    textarea,
+    input[type="text"],
+    input[type="password"],
+    input[type="datetime"],
+    input[type="datetime-local"],
+    input[type="date"],
+    input[type="month"],
+    input[type="time"],
+    input[type="week"],
+    input[type="number"],
+    input[type="email"],
+    input[type="url"],
+    input[type="search"],
+    input[type="tel"],
+    input[type="color"] {
+        font-size: 16px !important;
+    }
+} 
